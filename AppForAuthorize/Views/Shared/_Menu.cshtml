@@ -1,0 +1,14 @@
+﻿<ul id="menu" class="nav navbar-nav" style="float: none;">
+    @if (HttpContext.Current.User.Identity.IsAuthenticated)
+    {
+        <li> @Html.ActionLink("Главная", "Index", "Home")</li>
+        <li> @Html.ActionLink("Выход", "Logout", "Home")</li>
+        <li style=" text-align: right; float: right; white-space: nowrap; display: block; padding: 15px 0px; color: #9d9d9d;">
+            Привет, @User.Identity.FullName()
+        </li>
+    }
+    else
+    {
+        <li> @Html.ActionLink("Вход", "Login", "Home")</li>
+    }
+</ul> 
